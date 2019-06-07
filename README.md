@@ -27,3 +27,11 @@ pkg_deps=(
   "pip/Cython"
 )
 ```
+
+## Habitat Builder
+Built packages can be access [here](https://bldr.habitat.sh/#/origins/pip/packages)
+or by doing
+```
+hab pkg install pip/<module_name>/<module_version>
+```
+on the command-line.
