@@ -1,0 +1,62 @@
+[bcrypt]
+plan_path = "bcrypt"
+paths = [
+  "bcrypt/*",
+  "scaffolding-pip/*"
+]
+
+[botocore]
+plan_path = "botocore"
+paths = [
+  "botocore/*",
+  "scaffolding-pip/*"
+]
+
+[cffi]
+plan_path = "cffi"
+paths = [
+  "cffi/*",
+  "scaffolding-pip/*"
+]
+
+[Cython]
+plan_path = "Cython"
+paths = [
+  "Cython/*",
+  "scaffolding-pip/*"
+]
+
+[numpy]
+plan_path = "numpy"
+paths = [
+  "numpy/*",
+  "scaffolding-pip/*"
+]
+
+[pandas]
+plan_path = "pandas"
+paths = [
+  "pandas/*",
+  "scaffolding-pip/*"
+]
+
+[scipy]
+plan_path = "scipy"
+paths = [
+  "scipy/*",
+  "scaffolding-pip/*"
+]
+
+[six]
+plan_path = "six"
+paths = [
+  "six/*",
+  "scaffolding-pip/*"
+]
+
+[tensorflow]
+plan_path = "tensorflow"
+paths = [
+  "tensorflow/*",
+  "scaffolding-pip/*"
+]
