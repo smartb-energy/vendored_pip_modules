@@ -1,27 +1,29 @@
-# scaffolding-pip
-This package provides a set of override Plan callbacks that simplify the process
-of packaging a Python/Pip module as a Habitat Library Package. The rest of this
-`README` details how to depend on this Scaffolding package in your `plan.sh`.
+# About This Repository
+Most of the subdirectories in this repository contain Habitat Plans for
+re-packaging, or "vendoring", specific versions of Python modules. These Plans
+will be automatically built by Habitat Builder as specified in `.bldr.toml`.
+Depending on one of these packages, for example, `pip/Cython/0.29.6`, will inject a
+Habitat-flavored version of the package in the depending package's `PYTHONPATH`
+variable at both buildtime and runtime. `pip` and similar tools will detect this
+and skip expensive/slow install steps because the vendored module is alredy 
+present.
+
+This repository also contains a Habitat Scaffolding package, `scaffolding-pip`,
+that is auto-built by Habitat Builder and can be used as a dependency for Plans
+that vendor Pip modules by specifying `smartb/scaffolding-pip` as the Plan's
+`pkg_scaffolding`.
 
 ## Maintainers
 * smartB Engineering: <dev@smartb.eu>
 * Blake Irvin: <blakeirvin@me.com>
 
-## Type of Package
-Scaffolding
+## Type of Packages
+Library
 
 ## Usage
-Here's how a plan depending on `smartb/scaffolding-pip` might look:
+Here's how a plan depending on these vendored modules might look:
 ```
-# Always at least set 'pkg_origin', 'pkg_name' and 'pkg_version':
-pkg_origin=pip
-pkg_name=<name>
-pkg_version="<version>"
-pkg_maintainer="smartB Engineering <dev@smartb.eu>"
-pkg_scaffolding="smartb/scaffolding-pip"
-
-# Setting 'scaffolding_python_pkg' is required if you need a specific version of
-# Python for your module. See https://bldr.habitat.sh/#/pkgs/core/python for
-# available Python packages.
-scaffolding_python_pkg="core/python36"
+pkg_deps=(
+  "pip/Cython"
+)
 ```
