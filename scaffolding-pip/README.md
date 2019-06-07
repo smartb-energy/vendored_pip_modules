@@ -19,9 +19,7 @@ pkg_name=<name>
 pkg_version="<version>"
 pkg_maintainer="smartB Engineering <dev@smartb.eu>"
 pkg_scaffolding="smartb/scaffolding-pip"
-
-# Setting 'scaffolding_python_pkg' is required if you need a specific version of
-# Python for your module. See https://bldr.habitat.sh/#/pkgs/core/python for
-# available Python packages.
 scaffolding_python_pkg="core/python36"
 ```
+Setting 'scaffolding_python_pkg' is required. See https://bldr.habitat.sh/#/pkgs/core/python
+for available Python packages.
