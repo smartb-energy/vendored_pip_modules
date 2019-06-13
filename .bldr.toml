@@ -40,6 +40,12 @@ paths = [
   "scaffolding-pip/*"
 ]
 
+[scaffolding-pip]
+plan_path = "scaffolding-pip"
+paths = [
+  "scaffolding-pip/*"
+]
+
 [scipy]
 plan_path = "scipy"
 paths = [
