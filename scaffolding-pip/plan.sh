@@ -1,7 +1,7 @@
 pkg_origin=smartb
 pkg_name=scaffolding-pip
 pkg_version="0.1.0"
-pkg_maintainer="smartB Engineering <dev@smartb.eu>"
+pkg_maintainer="Blake Irvin <blakeirvin@me.com>, smartB Engineering <dev@smartb.eu>"
 pkg_deps=(
   "core/inetutils"
   "core/curl"
