@@ -18,6 +18,7 @@ pkg_origin=pip
 pkg_name=<name>
 pkg_version="<version>"
 pkg_maintainer="smartB Engineering <dev@smartb.eu>"
+pkg_deps=("smartb/scaffolding-pip")  # this allows Builder to perform reverse dependency builds
 pkg_scaffolding="smartb/scaffolding-pip"
 scaffolding_python_pkg="core/python36"
 ```
