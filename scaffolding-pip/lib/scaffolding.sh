@@ -45,6 +45,7 @@ _detect_python() {
 
 
 do_setup_environment() {
+  HAB_ENV_LD_LIBRARY_PATH_SEPARATOR=":"
   push_buildtime_env LD_LIBRARY_PATH "$(pkg_path_for core/gcc)/lib"
   push_buildtime_env LD_LIBRARY_PATH "$(pkg_path_for core/libffi)/lib"
   push_buildtime_env LD_LIBRARY_PATH "$(pkg_path_for core/pcre)/lib"
@@ -72,8 +73,10 @@ do_install() {
   export module_version=$(python -c "import ${pkg_name}; print(${pkg_name}.__version__)")
   build_line ""
   build_line "Successfully imported ${pkg_name} ${module_version} from ${pkg_origin}/${pkg_name}/${pkg_version}"
-  build_line "PYTHONPATH will be pushed to $(ls -d $PYTHONPATH)"
-  build_line ""
+  build_line "PYTHONPATH will be pushed to:"
+  ls --directory $PYTHONPATH
+  build_line "Vendored module is at:"
+  ls --directory $PYTHONPATH/$pkg_name
   return $?
 }
 
