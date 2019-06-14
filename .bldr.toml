@@ -1,5 +1,5 @@
-# Edit this comment or this file anywhere to trigger a new group build in
-# Habitat Builder.
+# Edit this file trigger a new group build in Builder.
+
 [bcrypt]
 plan_path = "bcrypt"
 paths = [
