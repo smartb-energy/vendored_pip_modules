@@ -1,7 +1,7 @@
 scaffolding_load() {
   _detect_python
-  python_major_version="$( echo $(_get_pkg_identifier ${scaffolding_python_pkg}) | cut -d/ -f3 | cut -d. -f1,2)"
-  pkg_include_dirs=("lib/python${python_major_version}/site-packages/${pkg_name}/core/include/")
+  python_major_version="$(hab pkg exec $scaffolding_python_pkg python --version | cut -d' ' -f2 | cut -d. -f1,2)"
+  pkg_include_dirs="lib/python${python_major_version}/site-packages/${pkg_name}/core/include/"
   return $?
 }
 
