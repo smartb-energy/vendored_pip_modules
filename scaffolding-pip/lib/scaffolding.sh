@@ -1,7 +1,5 @@
 scaffolding_load() {
   _detect_python
-  python_major_version=$(hab pkg exec $_python_pkg python -c 'import sys; print(str(sys.version_info.major) + "." + str(sys.version_info.minor))')
-  pkg_include_dirs="${pkg_prefix}/lib/python${python_major_version}/site-packages/${pkg_name}/core/include/"
   return $?
 }
 
@@ -45,6 +43,9 @@ _detect_python() {
 
 
 do_setup_environment() {
+  python_major_version=$(hab pkg exec $_python_pkg python -c 'import sys; print(str(sys.version_info.major) + "." + str(sys.version_info.minor))')
+  pkg_include_dirs="lib/python${python_major_version}/site-packages/${pkg_name}/core/include/"
+
   HAB_ENV_LD_LIBRARY_PATH_SEPARATOR=":"
   push_buildtime_env LD_LIBRARY_PATH "$(pkg_path_for core/gcc)/lib"
   push_buildtime_env LD_LIBRARY_PATH "$(pkg_path_for core/libffi)/lib"
