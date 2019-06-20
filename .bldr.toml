@@ -32,6 +32,14 @@ paths = [
   ".bldr.toml"
 ]
 
+[grpcio]
+plan_path = "grpcio"
+paths = [
+  "grpcio/*",
+  "scaffolding-pip/*",
+  ".bldr.toml"
+]
+
 [numpy]
 plan_path = "numpy"
 paths = [
@@ -51,6 +59,14 @@ paths = [
 [scaffolding-pip]
 plan_path = "scaffolding-pip"
 paths = [
+  "scaffolding-pip/*",
+  ".bldr.toml"
+]
+
+[scikit-learn]
+plan_path = "scikit-learn"
+paths = [
+  "scikit-learn/*",
   "scaffolding-pip/*",
   ".bldr.toml"
 ]
